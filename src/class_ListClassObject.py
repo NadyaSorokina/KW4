@@ -62,7 +62,7 @@ class ListVacancyObject(ListClassObject):
 
 
     def sort_lists_salary(self):
-        """Метод сортировки с писка с объектами класса Vacancy"""
+        """Метод сортировки списка с объектами класса Vacancy"""
         self.list_sort = sorted(self.list_select,
                                 key=lambda item: (item['salary_to'], item['salary_from']),
                                 reverse=True)
