@@ -62,7 +62,7 @@ def main():
             print(f"{select_vacancy}\n")
 
         # Очищение JSON файла
-        #json_hh_parser.clear_json()
+        json_hh_parser.clear_json()
 
 
 if __name__ == '__main__':
