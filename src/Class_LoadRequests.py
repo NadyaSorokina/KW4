@@ -18,15 +18,25 @@ class LoadRequests(ABC):
 class JsonLoadRequests(LoadRequests):
 
 
-    def __init__(self,content_request, path):
+    def __init__(self,content_request):
         """Конструктор класса загрузки в JSON файл"""
         super().__init__(content_request)
-        self.path = path
+        self.__path = ''
+
+
+    @property
+    def path(self):
+        return self.__path
+
+
+    @path.setter
+    def path(self, path):
+        self.__path = path
 
 
     def write_requests(self):
         """Метод записи в JSON файл данных, полученных из запроса"""
-        with open(self.path, 'w', encoding="utf-8") as file:
+        with open(self.__path, 'w', encoding="utf-8") as file:
             json.dump(self.content_request, file,  ensure_ascii=False, indent=4)
 
 

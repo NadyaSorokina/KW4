@@ -23,12 +23,12 @@ class HHIntegration(APIIntegration):
 
     def __init__(self):
         super().__init__()
-        self.url = 'https://api.hh.ru/vacancies'
+        self.__url = 'https://api.hh.ru/vacancies'
 
 
     def response_check(self):
         """Проверка подключения по API HH.ru"""
-        response = requests.get(self.url)
+        response = requests.get(self.__url)
         #Вызываем исключение ошибки при подключении
         try:
             if response.status_code != 200:
